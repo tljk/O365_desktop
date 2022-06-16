@@ -9,4 +9,7 @@ class OAuth(Account):
         super().__init__(credentials, protocol=protocol)
 
         if 'o365_token.txt' not in os.listdir():
-            self.account.authenticate(scopes=['basic', 'calendar_all', 'tasks_all'])
+            self.authenticate(scopes=['basic', 'calendar_all', 'tasks_all'])
+
+if __name__ == '__main__':
+    account = OAuth()
